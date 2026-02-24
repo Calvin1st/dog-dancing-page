@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <!-- 꼬리 -->
+  <g class="tail">
+    <ellipse cx="155" cy="170" rx="12" ry="7" fill="#C8A26A" transform="rotate(-30 155 170)" />
+    <ellipse cx="168" cy="158" rx="10" ry="6" fill="#C8A26A" transform="rotate(-50 168 158)" />
+    <ellipse cx="178" cy="145" rx="8" ry="5" fill="#C8A26A" transform="rotate(-70 178 145)" />
+  </g>
+
+  <!-- 몸통 -->
+  <ellipse cx="100" cy="165" rx="55" ry="50" fill="#D4A96A" />
+
+  <!-- 앞다리 왼쪽 -->
+  <rect x="58" y="195" width="22" height="38" rx="11" fill="#C8A26A" />
+  <ellipse cx="69" cy="233" rx="13" ry="8" fill="#B8916A" />
+
+  <!-- 앞다리 오른쪽 -->
+  <rect x="120" y="195" width="22" height="38" rx="11" fill="#C8A26A" />
+  <ellipse cx="131" cy="233" rx="13" ry="8" fill="#B8916A" />
+
+  <!-- 목 -->
+  <ellipse cx="100" cy="125" rx="28" ry="22" fill="#D4A96A" />
+
+  <!-- 머리 -->
+  <ellipse cx="100" cy="95" rx="45" ry="42" fill="#D4A96A" />
+
+  <!-- 귀 왼쪽 (늘어진 귀) -->
+  <ellipse cx="65" cy="80" rx="18" ry="30" fill="#B8916A" transform="rotate(-15 65 80)" />
+
+  <!-- 귀 오른쪽 (늘어진 귀) -->
+  <ellipse cx="135" cy="80" rx="18" ry="30" fill="#B8916A" transform="rotate(15 135 80)" />
+
+  <!-- 얼굴 흰색 부분 -->
+  <ellipse cx="100" cy="105" rx="28" ry="24" fill="#F5E6C8" />
+
+  <!-- 눈 왼쪽 -->
+  <circle cx="85" cy="88" r="8" fill="#2D1A0A" />
+  <circle cx="88" cy="85" r="3" fill="white" />
+  <circle cx="85" cy="88" r="2" fill="#1A0A00" />
+
+  <!-- 눈 오른쪽 -->
+  <circle cx="115" cy="88" r="8" fill="#2D1A0A" />
+  <circle cx="118" cy="85" r="3" fill="white" />
+  <circle cx="115" cy="88" r="2" fill="#1A0A00" />
+
+  <!-- 코 -->
+  <ellipse cx="100" cy="103" rx="10" ry="7" fill="#2D1A0A" />
+  <ellipse cx="97" cy="101" rx="3" ry="2" fill="#4A3020" />
+
+  <!-- 입 -->
+  <path d="M 88 112 Q 100 122 112 112" stroke="#2D1A0A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+  <!-- 혀 -->
+  <ellipse cx="100" cy="120" rx="9" ry="7" fill="#FF6B6B" />
+  <line x1="100" y1="115" x2="100" y2="127" stroke="#E05555" stroke-width="1.5" />
+
+  <!-- 볼 홍조 왼쪽 -->
+  <ellipse cx="76" cy="108" rx="10" ry="6" fill="#FFB3B3" opacity="0.6" />
+
+  <!-- 볼 홍조 오른쪽 -->
+  <ellipse cx="124" cy="108" rx="10" ry="6" fill="#FFB3B3" opacity="0.6" />
+
+  <!-- 목줄 -->
+  <rect x="76" y="132" width="48" height="10" rx="5" fill="#FF6B35" />
+  <rect x="97" y="130" width="6" height="14" rx="3" fill="#FFD166" />
+</svg>

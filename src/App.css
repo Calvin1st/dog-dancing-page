@@ -1,0 +1,62 @@
+/* ===== 메인 레이아웃 ===== */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 32px 16px;
+  gap: 4px;
+}
+
+/* ===== 타이틀 ===== */
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #2D3047;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(45, 48, 71, 0.12);
+}
+
+/* ===== 서브타이틀 ===== */
+.subtitle {
+  font-size: 1.05rem;
+  color: #7A6A5A;
+  margin-bottom: 12px;
+  min-height: 1.6em;
+  transition: opacity 0.3s ease;
+}
+
+/* ===== 반응형: 태블릿 ===== */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== 반응형: 모바일 ===== */
+@media (max-width: 480px) {
+  .app {
+    padding: 24px 12px;
+    gap: 2px;
+  }
+  .title {
+    font-size: 1.7rem;
+  }
+  .subtitle {
+    font-size: 0.88rem;
+  }
+}
+
+/* ===== 접근성: 모션 감소 선호 ===== */
+@media (prefers-reduced-motion: reduce) {
+  .dog-wrapper.dancing,
+  .tail-wrapper.wag,
+  .dog-shadow.shadow-anim,
+  .note {
+    animation: none !important;
+  }
+}

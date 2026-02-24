@@ -1,0 +1,121 @@
+/* ===== 변수 기본값 ===== */
+:root {
+  --dance-duration: 0.8s;
+  --slow-duration: 1.2s;
+  --fast-duration: 0.4s;
+}
+
+/* ===== 무대 ===== */
+.dog-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 320px;
+  height: 360px;
+  will-change: transform;
+}
+
+/* ===== 강아지 이미지 ===== */
+.dog-image {
+  width: 200px;
+  height: 240px;
+  display: block;
+  user-select: none;
+}
+
+/* ===== 춤 동작: 좌우 흔들기 + 점프 ===== */
+@keyframes dance-body {
+  0%   { transform: translateY(0px)   rotate(-6deg) scaleX(1); }
+  15%  { transform: translateY(-18px) rotate(0deg)  scaleX(0.95); }
+  30%  { transform: translateY(-28px) rotate(6deg)  scaleX(1); }
+  45%  { transform: translateY(-18px) rotate(0deg)  scaleX(0.95); }
+  60%  { transform: translateY(0px)   rotate(-6deg) scaleX(1); }
+  75%  { transform: translateY(-10px) rotate(3deg)  scaleX(0.97); }
+  90%  { transform: translateY(-4px)  rotate(-3deg) scaleX(1); }
+  100% { transform: translateY(0px)   rotate(-6deg) scaleX(1); }
+}
+
+/* ===== 꼬리 흔들기 ===== */
+@keyframes tail-wag {
+  0%   { transform: rotate(-25deg); }
+  25%  { transform: rotate(25deg); }
+  50%  { transform: rotate(-20deg); }
+  75%  { transform: rotate(20deg); }
+  100% { transform: rotate(-25deg); }
+}
+
+/* ===== 그림자 숨쉬기 ===== */
+@keyframes shadow-pulse {
+  0%   { transform: scaleX(1);    opacity: 0.3; }
+  30%  { transform: scaleX(0.7);  opacity: 0.15; }
+  60%  { transform: scaleX(0.55); opacity: 0.1; }
+  100% { transform: scaleX(1);    opacity: 0.3; }
+}
+
+/* ===== 음표 떠오르기 ===== */
+@keyframes note-float {
+  0%   { transform: translateY(0) scale(1);   opacity: 0; }
+  15%  { opacity: 1; }
+  80%  { transform: translateY(-80px) scale(1.3); opacity: 0.8; }
+  100% { transform: translateY(-120px) scale(0.8); opacity: 0; }
+}
+
+/* ===== 배경 리듬 펄스 ===== */
+@keyframes bg-pulse {
+  0%, 100% { background-color: #FFF8E7; }
+  50%       { background-color: #FFF0CC; }
+}
+
+/* ===== 실제 적용 ===== */
+.dog-wrapper.dancing {
+  animation: dance-body var(--dance-duration) ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.tail-wrapper.wag {
+  transform-origin: 80% 70%;
+  animation: tail-wag var(--fast-duration) ease-in-out infinite;
+}
+
+.dog-shadow {
+  width: 120px;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  margin-top: -8px;
+}
+
+.dog-shadow.shadow-anim {
+  animation: shadow-pulse var(--dance-duration) ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* ===== 음표 ===== */
+.music-notes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.note {
+  position: absolute;
+  font-size: 1.6rem;
+  animation: note-float 1.8s ease-out infinite;
+  opacity: 0;
+}
+
+.note-1 { left: 15%; top: 30%; animation-delay: 0s;    color: #FF6B35; }
+.note-2 { left: 75%; top: 25%; animation-delay: 0.45s; color: #06D6A0; }
+.note-3 { left: 25%; top: 50%; animation-delay: 0.9s;  color: #FFD166; }
+.note-4 { left: 68%; top: 48%; animation-delay: 1.35s; color: #FF6B35; }
+
+/* ===== 배경 박자 ===== */
+body:has(.dog-stage.playing) {
+  animation: bg-pulse var(--slow-duration) ease-in-out infinite;
+}
